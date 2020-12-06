@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'package:calculadora/button.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 void main() {
@@ -26,7 +26,7 @@ class Calculadora extends StatefulWidget {
 }
 
 class _CalculadoraState extends State<Calculadora> {
-  final bgPrimarysColor = const Color(0xff222831);
+  final bgPrimaryColor = const Color(0xff222831);
   final bgSecundaryColor = const Color(0xff393e46);
   final highlightColor = const Color(0xff00adb5);
 
@@ -39,17 +39,17 @@ class _CalculadoraState extends State<Calculadora> {
     'DEL',
     '%',
     '/',
-    '9',
-    '8',
     '7',
+    '8',
+    '9',
     '*',
-    '6',
+    '4',
     '5',
-    "4",
+    "6",
     '-',
-    '3',
-    '2',
     '1',
+    '2',
+    '3',
     '+',
     '0',
     '.',
@@ -60,7 +60,7 @@ class _CalculadoraState extends State<Calculadora> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgPrimarysColor,
+      backgroundColor: bgPrimaryColor,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -97,30 +97,42 @@ class _CalculadoraState extends State<Calculadora> {
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 4),
                       itemBuilder: (BuildContext contex, int index) {
-                        return Button(
-                          buttonTapped: () {
-                            if (buttons[index] == 'C') {
-                              clearScreenOp();
-                              clearScreenResult();
-                            } else if (buttons[index] == 'DEL') {
-                              removeLastChar();
-                            } else if (buttons[index] == '=') {
-                              equalPressed();
-                            } else if (isOperator(anterior) &&
-                                isOperator(buttons[index])) {
-                              return;
-                            } else {
-                              setState(() {
-                                screenOperation += buttons[index];
-                                anterior = buttons[index];
-                              });
-                            }
-                          },
-                          buttonText: buttons[index],
-                          color: isOperator(buttons[index])
-                              ? highlightColor
-                              : bgSecundaryColor,
-                          textColor: Colors.white,
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: RaisedButton(
+                            onPressed: () {
+                              if (buttons[index] == 'C') {
+                                clearScreenOp();
+                                clearScreenResult();
+                              } else if (buttons[index] == 'DEL') {
+                                removeLastChar();
+                              } else if (buttons[index] == '=') {
+                                equalPressed();
+                              } else if (isOperator(anterior) &&
+                                  isOperator(buttons[index])) {
+                                return;
+                              } else {
+                                setState(() {
+                                  screenOperation += buttons[index];
+                                  anterior = buttons[index];
+                                });
+                              }
+                            },
+                            child: Text(
+                              buttons[index],
+                              style: GoogleFonts.montserrat(fontSize: 22),
+                            ),
+                            textColor: Colors.white,
+                            elevation: 3,
+                            splashColor: !isOperator(buttons[index])
+                                ? highlightColor
+                                : bgSecundaryColor,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0)),
+                            color: isOperator(buttons[index])
+                                ? highlightColor
+                                : bgSecundaryColor,
+                          ),
                         );
                       }),
                 ),
