@@ -2,9 +2,9 @@
  Projeto para iniciar desenvolvimento em flutter <br>
  <h1>Cores ultilizadas</h1>
  <a href="https://colorhunt.co/palette/2763">ColorHunt</a><br>
- Background: #222831<br>
- Botoões escuros : #393e46<br>
- Botoes coloridos: #00adb5<br>
+ <p sytle="color:#222831">Background: #222831</p><br>
+ <p sytle="#393e46">Botoões escuros : #393e46</p><br>
+ <p sytle="#00adb5">Botoes coloridos: #00adb5</p><br>
  <h1>Dependências</h1>
  google_fonts: ^1.1.1
  <br>
