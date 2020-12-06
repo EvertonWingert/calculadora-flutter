@@ -1,5 +1,5 @@
 # calculadora
- calculadora feito em flutter <br>
+ Calculadora feito em flutter <br>
  Cores ultilizadas: <a href="https://colorhunt.co/palette/2763">ColorHunt</a><br>
  Background: #222831<br>
  Botoões escuros : #393e46<br>
