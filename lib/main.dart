@@ -32,7 +32,7 @@ class _CalculadoraState extends State<Calculadora> {
 
   var screenOperation = '';
   var screenResult = '';
-  var anterior = '';
+  var previus = '';
 
   final List<String> buttons = [
     'C',
@@ -74,16 +74,16 @@ class _CalculadoraState extends State<Calculadora> {
                     ),
                     Container(
                         padding: EdgeInsets.all(20),
-                        alignment: Alignment.centerLeft,
+                        alignment: Alignment.centerRight,
                         child: Text(screenOperation,
                             style:
-                                TextStyle(fontSize: 20, color: Colors.white))),
+                                TextStyle(fontSize: 30, color: Colors.white))),
                     Container(
                         padding: EdgeInsets.all(20),
                         alignment: Alignment.centerRight,
                         child: Text(screenResult,
                             style:
-                                TextStyle(fontSize: 40, color: Colors.white)))
+                                TextStyle(fontSize: 50, color: Colors.white)))
                   ],
                 ),
               ),
@@ -108,13 +108,13 @@ class _CalculadoraState extends State<Calculadora> {
                                 removeLastChar();
                               } else if (buttons[index] == '=') {
                                 equalPressed();
-                              } else if (isOperator(anterior) &&
+                              } else if (isOperator(previus) &&
                                   isOperator(buttons[index])) {
                                 return;
                               } else {
                                 setState(() {
                                   screenOperation += buttons[index];
-                                  anterior = buttons[index];
+                                  previus = buttons[index];
                                 });
                               }
                             },
@@ -154,14 +154,14 @@ class _CalculadoraState extends State<Calculadora> {
   void clearScreenOp() {
     setState(() {
       screenOperation = '';
-      anterior = '';
+      previus = '';
     });
   }
 
   void clearScreenResult() {
     setState(() {
       screenResult = '';
-      anterior = '';
+      previus = '';
     });
   }
 
