@@ -1,5 +1,5 @@
-# calculadora
- Calculadora feito em flutter <br>
+# Calculadora
+ Projeto para iniciar desenvolvimento em flutter <br>
  <h1>Cores ultilizadas</h1>
  <a href="https://colorhunt.co/palette/2763">ColorHunt</a><br>
  Background: #222831<br>
