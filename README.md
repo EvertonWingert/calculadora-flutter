@@ -1,5 +1,7 @@
 # calculadora
  calculadora feito em flutter
-![](print/sc1.jpg | width=100)
-![](print/sc2.jpg =250x250)
-![](print/sc3.jpg =250x250)
+<p align="center">
+  <img src="print/sc1.jpg" width="256" height="455">
+  <img src="print/sc2.jpg" width="256" height="455">
+  <img src="print/sc3.jpg" width="256" height="455">
+</p>
